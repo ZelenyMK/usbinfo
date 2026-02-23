@@ -8,8 +8,5 @@ To install/uninstall you have to `run sudo make install/uninstall`.
 Currently, usbinfo requires superuser rights to run.
 So you should run it with `sudo` on most Linux distributions.
 
-# How to install/uninstall
-To install/uninstall you have to run sudo make install/uninstall
-
 # Dependencies
 This software uses [libusb](https://github.com/libusb/libusb) library.
