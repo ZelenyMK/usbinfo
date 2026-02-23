@@ -12,7 +12,13 @@ usbinfo: main.o info.o
 	gcc main.o info.o -lusb-1.0 -o usbinfo
 
 clean:
-	rm *.o usbinfo
+	rm -f *.o usbinfo
 
 style:
 	clang-format -i -style=Google *.c *.h
+
+install: all
+	install -m 755 ./usbinfo /usr/local/bin
+
+uninstall:
+	rm -f /usr/local/bin/usbinfo
