@@ -19,7 +19,7 @@ int main(/*int argc, char *argv[]*/) {
     printf("Error: %s\n", libusb_strerror(errno));
     return (int)count_devices;
   }
-    
+
   info *device_info = (info *)calloc(count_devices, sizeof(info));
   for (int i = 0; i < count_devices; i++) {
     get_info(devices[i], &device_info[i]);
