@@ -19,15 +19,15 @@ int main(/*int argc, char *argv[]*/) {
     printf("Error: %s\n", libusb_strerror(errno));
     return (int)count_devices;
   }
-
+    
   info *device_info = (info *)calloc(count_devices, sizeof(info));
-
   for (int i = 0; i < count_devices; i++) {
     get_info(devices[i], &device_info[i]);
     printf("Device %d:\n", i);
     show_info(&device_info[i]);
   }
 
+  free(device_info);
   libusb_free_device_list(devices, 0);
   libusb_exit(NULL);
   return 0;

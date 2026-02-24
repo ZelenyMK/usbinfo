@@ -49,6 +49,7 @@ void get_info(libusb_device *dev, info *i) {
                                          sizeof((i->serial_number))) < 0) {
     strcpy(i->serial_number, "Serial number not supported");
   }
+  libusb_close(handle);
 }
 
 void show_info(info *i) {
